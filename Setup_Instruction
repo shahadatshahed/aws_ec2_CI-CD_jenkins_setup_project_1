@@ -1,23 +1,23 @@
                  AWS_EC2 Jenkins Master and Agent Setup -Ubuntu
 ******************************************************************************************
 ================Login https://aws.amazon.com/ ==================
->> set up two EC2 instances, one for the Jenkins master and another for the Jenkins agent.
-OS version ubuntu 20 or 22 LTS
+>> Set up two EC2 instances, one for the Jenkins master and another for the Jenkins agent.
+OS version Ubuntu 20 or 22 LTS
 
 ================edit EC2  Security Groups inbound rules ======================
 >> Allow port 22 for ssh
->> Allow port 8080 for jenkins web access
+>> Allow port 8080 for Jenkins web access
 
 
 =============== for Master Node =======================
 
-ssh ......ip of jenkins master node.....
+ssh ......ip of Jenkins master node.....
 sudo apt update && sudo apt upgrade -y
 java --version
-sudo apt install openjdk-17-jre
+sudo apt install OpenJDK-17-jre
 
 
-***install Jenkins by executing the following command***
+*** Install Jenkins by executing the following command***
 
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
@@ -41,10 +41,10 @@ Ref: https://www.jenkins.io/doc/book/installing/linux/
 
 
 =============== for Agent Node =======================
-ssh ......ip of jenkins agent node.....
+ssh ......ip of Jenkins agent node.....
 sudo apt update && sudo apt upgrade -y
 java --version
-sudo apt install openjdk-17-jre
+sudo apt install OpenJDK-17-jre
 
 
 
@@ -53,7 +53,7 @@ from master node
 ssh-keygen -t rsa
 cd ~/.ssh
 cat ID_rsa.pub
-#copy the key and then paste it in jenkins agent node follow the followings
+#copy the key and then paste it in the Jenkins agent node ..
 from agent node
 cd ~/.ssh
 vi authentication_key
@@ -68,12 +68,12 @@ Browse to http://localhost:8080 (or whichever port configured for Jenkins when i
 
 Unlock Jenkins page
 
-From the Jenkins console log output, copy the automatically-generated alphanumeric password (between the 2 sets of asterisks).
+From the Jenkins console log output, copy the automatically generated alphanumeric password (between the 2 sets of asterisks).
 
-Copying initial admin password
+Copying the initial admin password
 Note:
 
-The command: sudo cat /var/lib/jenkins/secrets/initialAdminPassword will print the password at console.
+The command: sudo cat /var/lib/jenkins/secrets/initialAdminPassword will print the password at the console.
 
 
 On the Unlock Jenkins page, paste this password into the Administrator password field and click Continue.
@@ -105,11 +105,13 @@ This page may indicate Jenkins is almost ready! instead and if so, click Restart
 
 If the page does not automatically refresh after a minute, use your web browser to refresh the page manually.
 
-If required, log in to Jenkins with the credentials of the user you just created and you are ready to start using Jenkins!
+If required, login to Jenkins with the credentials of the user you just created and you are ready to start using Jenkins!
 
 
 
 =================For node joing process plese visit the following links====================
 
+                  https://youtu.be/VN2_xKtdOiQ
+The YouTube channel is owned by me and all content is created by me
 
 
